@@ -1,0 +1,35 @@
+﻿@model WEBSiteTecsup.Models.Musica
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Musica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicAutor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicAutor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MusicID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

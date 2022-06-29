@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WEBSiteTecsup.Models.Musica>
+
+@{
+    ViewBag.Title = "IndexMusica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>IndexMusica</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicAutor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusicName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusicAutor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MusicID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MusicID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MusicID })
+        </td>
+    </tr>
+}
+
+</table>
